@@ -3,3 +3,31 @@
  ./vendor/bin/bref init
 
  serverless deploy
+
+_____________________________________________________
+
+Example Post request 
+
+<?php declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+return function ($event) {
+
+    $eventAsString = json_encode($event);
+
+    echo 'Received Event: ' . $eventAsString;
+
+    //return 'Received Event: ' . $eventAsString;
+
+    $response = [
+
+        'statusCode' => 200,
+
+        'body' => 'Received Event: ' . $eventAsString,
+
+    ];
+
+    return $response;
+
+};
