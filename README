@@ -1,0 +1,5 @@
+ composer require bref/bref
+
+ ./vendor/bin/bref init
+
+ serverless deploy
